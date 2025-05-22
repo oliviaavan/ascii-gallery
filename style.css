@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: white;
+    color: black;
+    font-family: sans-serif;
+}
+
+#landing {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    z-index: 1000;
+}
+
+ #landing .top-border {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    border: none;
+    border-top: 1px dashed black;
+}
+
+#landing .bottom-border {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    border: none;
+    border-top: 1px dashed black;
+ }
+
+ #landing h1 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+}
+
+#landing button {
+    padding: 1rem 2.3rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+ #main {
+    display: none;
+}
+
+#controls {
+    position: relative;
+    top: 10px; 
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem 0;
+    z-index: 100;
+ }
+
+ #controls button {
+    padding: 0.75rem 1.5rem;
+    font-size: .95rem;
+    cursor: pointer;
+ }
+    
+#animation-wrapper {
+    position: absolute;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw; height: 100vh;
+ }
+
+pre#trace {
+    flex: 1;
+    margin: 0;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    white-space: pre;
+}
+    
+#caption {
+    position: absolute;
+    bottom: 52px; 
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.divider {
+    position: absolute;
+    top: 72px;
+    width: 100%;
+    margin: 0.5rem auto 0 auto;
+    border: none;
+    border-top: 1px dashed black;
+}
+
+.caption-divider {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    border: none;
+    border-top: 1px dashed black;
+}
