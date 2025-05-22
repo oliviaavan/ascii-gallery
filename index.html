@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>olivia's ascii gallery</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: white;
+      color: black;
+      font-family: sans-serif;
+    }
+
+    #landing {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #f5f5f5;
+      z-index: 1000;
+    }
+
+    #landing h1 {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+      font-weight: normal;
+    }
+
+    #landing button {
+      padding: 1rem 2.3rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    #main {
+      display: none;
+    }
+
+    #controls {
+      position: absolute;
+      top: 20px; left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0.5rem 0;
+      z-index: 100;
+    }
+
+    #controls button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    
+    #animation-wrapper {
+      position: absolute;
+      top: 15px;
+      display: flex;
+      flex-direction: column;
+      width: 100vw; height: 100vh;
+    }
+
+    pre#trace {
+      flex: 1;
+      margin: 0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      white-space: pre;
+    }
+    
+    #caption {
+      position: absolute;
+      bottom: 40px; left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.5em;
+    }
+  </style>
+
+  <script src="./video1Frames.js"></script>
+  <script src="./video2Frames.js"></script>
+  <script src="./video3Frames.js"></script>
+  <script src="./video4Frames.js"></script>
+  <script src="./video5Frames.js"></script>
+  <script src="./video6Frames.js"></script>
+  <script src="./video7Frames.js"></script>
+</head>
+
+<body>
+  <div id="landing">
+    <h1>welcome to olivia's ascii video gallery!</h1>
+    <button id="start-btn">start</button>
+  </div>
+
+  <div id="main">
+    <div id="controls">
+      <button onclick="switchVideo(frames1, 'cologne by beabadoobee', 'audio1')">beabadoobee</button>
+      <button onclick="switchVideo(frames2, 'igual que un angel by kali uchis', 'audio2')">kali uchis</button>
+      <button onclick="switchVideo(frames3, 'back to me by the marias', 'audio3')">the marias</button>
+      <button onclick="switchVideo(frames4, 'still into you by paramore', 'audio4')">paramore</button>
+      <button onclick="switchVideo(frames5, 'tonight by pink pantheress', 'audio5')">pink pantheress</button>
+      <button onclick="switchVideo(frames6, 'cherry by rina sawayama', 'audio6')">rina sawayama</button>
+      <button onclick="switchVideo(frames7, 'sword by wisp', 'audio7')">wisp</button>
+    </div>
+
+    <audio id="audio1" src="audio/audio1.mp4" preload="auto" loop></audio>
+    <audio id="audio2" src="audio/audio2.mp4" preload="auto" loop></audio>
+    <audio id="audio3" src="audio/audio3.mp4" preload="auto" loop></audio>
+    <audio id="audio4" src="audio/audio4.mp4" preload="auto" loop></audio>
+    <audio id="audio5" src="audio/audio5.mp4" preload="auto" loop></audio>
+    <audio id="audio6" src="audio/audio6.mp4" preload="auto" loop></audio>
+    <audio id="audio7" src="audio/audio7.mp4" preload="auto" loop></audio>
+  </div>
+</body>
+
+</html>
