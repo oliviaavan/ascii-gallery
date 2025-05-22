@@ -96,6 +96,7 @@
   <script src="./pinkFrames.js"></script>
   <script src="./rinaFrames.js"></script>
   <script src="./wispFrames.js"></script>
+  <script src="./clairoFrames.js"></script>
 </head>
 
 <body>
@@ -113,6 +114,7 @@
       <button onclick="switchVideo(frames5, 'tonight by pink pantheress', 'audio5')">pink pantheress</button>
       <button onclick="switchVideo(frames6, 'cherry by rina sawayama', 'audio6')">rina sawayama</button>
       <button onclick="switchVideo(frames7, 'sword by wisp', 'audio7')">wisp</button>
+      <button onclick="switchVideo(frames8, 'juna by clairo', 'audio8')">clairo</button>"
     </div>
 
     <div id="animation-wrapper">
@@ -127,6 +129,7 @@
     <audio id="audio5" src="audio/pinkAudio.mp4" preload="auto" loop></audio>
     <audio id="audio6" src="audio/rinaAudio.mp4" preload="auto" loop></audio>
     <audio id="audio7" src="audio/wispAudio.mp4" preload="auto" loop></audio>
+    <audio id="audio8" src="audio/clairoAudio.mp4" preload="auto" loop></audio>
   </div>
 
   <script>
@@ -152,7 +155,7 @@
       const scale = 1.2;
       const size  = base * scale;
       pre.style.fontSize   = `${size}px`;
-      pre.style.lineHeight = `${size * (9/14)}px`;  // original ratio
+      pre.style.lineHeight = `${size * (9/14)}px`;  
     }
 
     function startAnimating() {
