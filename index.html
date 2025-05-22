@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>olivia's ascii gallery</title>
-
+  
   <style>
     body {
       margin: 0;
@@ -89,13 +89,13 @@
     }
   </style>
 
-  <script src="./video1Frames.js"></script>
-  <script src="./video2Frames.js"></script>
-  <script src="./video3Frames.js"></script>
-  <script src="./video4Frames.js"></script>
-  <script src="./video5Frames.js"></script>
-  <script src="./video6Frames.js"></script>
-  <script src="./video7Frames.js"></script>
+  <script src="./beaFrames.js"></script>
+  <script src="./kaliFrames.js"></script>
+  <script src="./mariasFrames.js"></script>
+  <script src="./paramoreFrames.js"></script>
+  <script src="./pinkFrames.js"></script>
+  <script src="./rinaFrames.js"></script>
+  <script src="./wispFrames.js"></script>
 </head>
 
 <body>
@@ -115,6 +115,11 @@
       <button onclick="switchVideo(frames7, 'sword by wisp', 'audio7')">wisp</button>
     </div>
 
+    <div id="animation-wrapper">
+      <pre id="trace"><span id="trace-chars"></span></pre>
+      <div id="caption">cologne by beabadoobee</div>
+    </div>
+
     <audio id="audio1" src="audio/audio1.mp4" preload="auto" loop></audio>
     <audio id="audio2" src="audio/audio2.mp4" preload="auto" loop></audio>
     <audio id="audio3" src="audio/audio3.mp4" preload="auto" loop></audio>
@@ -123,6 +128,87 @@
     <audio id="audio6" src="audio/audio6.mp4" preload="auto" loop></audio>
     <audio id="audio7" src="audio/audio7.mp4" preload="auto" loop></audio>
   </div>
+
+  <script>
+    let frames   = frames1;
+    let max      = frames.length;
+    let i        = -1;
+    let dir      = 'inc';
+    let fps      = 3;
+    let fpsInterval, then, now, elapsed;
+    const pre    = document.getElementById('trace');
+    let currentAudio;
+
+    function setPreCharSize() {
+      const vw = window.innerWidth, vh = window.innerHeight;
+      const lines = frames[0].split('\n');
+      const numLines = lines.length;
+      const maxLineLength = Math.max(...lines.map(l => l.length));
+
+      const charW = vw / maxLineLength;
+      const charH = vh / numLines;
+      const base  = Math.min(charW, charH);
+
+      const scale = 1.2;
+      const size  = base * scale;
+      pre.style.fontSize   = `${size}px`;
+      pre.style.lineHeight = `${size * (9/14)}px`;  // original ratio
+    }
+
+    function startAnimating() {
+      fpsInterval = 350 / fps;
+      then = Date.now();
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      now = Date.now();
+      elapsed = now - then;
+      if (elapsed > fpsInterval) {
+        then = now - (elapsed % fpsInterval);
+        step();
+      }
+    }
+
+    function step() {
+      if (dir === 'inc') {
+        if (i === max - 1) { dir = 'dec'; i--; }
+        else               { i++;         }
+      } else {
+        if (i === 0)       { dir = 'inc'; i++; }
+        else               { i--;           }
+      }
+      document.getElementById('trace-chars').innerText = frames[i];
+    }
+
+    function switchVideo(newFrames, newCaption, audioId) {
+      frames = newFrames;
+      max    = frames.length;
+      i      = -1;
+      dir    = 'inc';
+      document.getElementById('caption').innerText = newCaption;
+      setPreCharSize();
+
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+      currentAudio = document.getElementById(audioId);
+      currentAudio.currentTime = 0;
+      currentAudio.play();
+    }
+
+    document.getElementById('start-btn').addEventListener('click', () => {
+      document.getElementById('landing').style.display = 'none';
+      document.getElementById('main').style.display    = 'block';
+      setPreCharSize();
+      startAnimating();
+      currentAudio = document.getElementById('audio1');
+      currentAudio.play();
+    });
+
+    window.addEventListener('resize', setPreCharSize);
+  </script>
 </body>
 
 </html>
