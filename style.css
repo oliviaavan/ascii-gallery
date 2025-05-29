@@ -1,91 +1,107 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: white;
-    color: black;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #landing {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #f5f5f5;
-    z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  z-index: 1000;
 }
 
- #landing .top-border {
-    position: absolute;
-    top: 80px;
-    width: 100%;
-    border: none;
-    border-top: 1px dashed black;
-}
-
-#landing .bottom-border {
-    position: absolute;
-    bottom: 80px;
-    width: 100%;
-    border: none;
-    border-top: 1px dashed black;
- }
-
- #landing h1 {
-    font-size: 2.8rem;
-    margin-bottom: 2rem;
-    font-weight: normal;
+#landing h1 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
 }
 
 #landing button {
-    padding: 1rem 2.3rem;
-    font-size: 1.25rem;
-    cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: white;
+  color: black;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  margin-top: 1.5rem;
 }
 
- #main {
-    display: none;
+#landing .top-border {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  border: none;
+  border-top: 1px dashed black;
+}
+
+#landing .bottom-border {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  border: none;
+  border-top: 1px dashed black;
+}
+
+#main {
+  display: none;
 }
 
 #controls {
-    position: relative;
-    top: 10px; 
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0.5rem 0;
-    z-index: 100;
- }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+}
 
- #controls button {
-    padding: 0.75rem 1.5rem;
-    font-size: .95rem;
-    cursor: pointer;
- }
-    
+#controls button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
 #animation-wrapper {
-    position: absolute;
-    top: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 100vw; height: 100vh;
- }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 60px;
+}
 
 pre#trace {
-    flex: 1;
-    margin: 0;
-    font-family: monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    white-space: pre;
+  margin: 0;
+  white-space: pre;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100vw;
 }
-    
+
 #caption {
     position: absolute;
     bottom: 52px; 

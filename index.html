@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>olivia's ascii gallery</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
-  
+
   <script src="./beaFrames.js"></script>
   <script src="./kaliFrames.js"></script>
   <script src="./mariasFrames.js"></script>
@@ -19,44 +23,47 @@
 </head>
 
 <body>
+
   <div id="landing">
-    <div class="top-border"></div>
-    <h1>welcome to olivia's ascii video gallery!</h1>
+    <h1 class="text">welcome to olivia's ascii video gallery!</h1>
     <button id="start-btn">start</button>
-    <div class="bottom-border"></div>
+    <hr class="top-border" />
+    <hr class="bottom-border" />
   </div>
 
-  <div id="main">
-    <div id="controls">
-      <button onclick="switchVideo(frames1, 'cologne by beabadoobee', 'audio1')">beabadoobee</button>
-      <button onclick="switchVideo(frames2, 'igual que un angel by kali uchis', 'audio2')">kali uchis</button>
-      <button onclick="switchVideo(frames3, 'back to me by the marias', 'audio3')">the marias</button>
-      <button onclick="switchVideo(frames4, 'still into you by paramore', 'audio4')">paramore</button>
-      <button onclick="switchVideo(frames5, 'tonight by pink pantheress', 'audio5')">pink pantheress</button>
-      <button onclick="switchVideo(frames6, 'cherry by rina sawayama', 'audio6')">rina sawayama</button>
-      <button onclick="switchVideo(frames7, 'sword by wisp', 'audio7')">wisp</button>
-      <button onclick="switchVideo(frames8, 'juna by clairo', 'audio8')">clairo</button>
+  <div class="container">
+    <div id="main">
+      <div id="controls">
+        <button onclick="switchVideo(frames1, 'cologne by beabadoobee', 'audio1')">beabadoobee</button>
+        <button onclick="switchVideo(frames2, 'igual que un angel by kali uchis', 'audio2')">kali uchis</button>
+        <button onclick="switchVideo(frames3, 'back to me by the marias', 'audio3')">the marias</button>
+        <button onclick="switchVideo(frames4, 'still into you by paramore', 'audio4')">paramore</button>
+        <button onclick="switchVideo(frames5, 'tonight by pink pantheress', 'audio5')">pink pantheress</button>
+        <button onclick="switchVideo(frames6, 'cherry by rina sawayama', 'audio6')">rina sawayama</button>
+        <button onclick="switchVideo(frames7, 'sword by wisp', 'audio7')">wisp</button>
+        <button onclick="switchVideo(frames8, 'juna by clairo', 'audio8')">clairo</button>
+      </div>
+
+      <hr class="divider"/> 
+
+      <div id="animation-wrapper">
+        <pre id="trace"><span id="trace-chars"></span></pre>
+        <div id="caption">cologne by beabadoobee</div>
+        <hr class="caption-divider"/> 
+      </div>
+
+      <audio id="audio1" src="audio/beaAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio2" src="audio/kaliAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio3" src="audio/mariasAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio4" src="audio/paramoreAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio5" src="audio/pinkAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio6" src="audio/rinaAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio7" src="audio/wispAudio.mp4" preload="auto" loop></audio>
+      <audio id="audio8" src="audio/clairoAudio.mp4" preload="auto" loop></audio>
     </div>
-
-    <div id="animation-wrapper">
-      <pre id="trace"><span id="trace-chars"></span></pre>
-      <div id="caption">cologne by beabadoobee</div>
-      <hr class="caption-divider"/>
-    </div>
-
-    <audio id="audio1" src="audio/beaAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio2" src="audio/kaliAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio3" src="audio/mariasAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio4" src="audio/paramoreAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio5" src="audio/pinkAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio6" src="audio/rinaAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio7" src="audio/wispAudio.mp4" preload="auto" loop></audio>
-    <audio id="audio8" src="audio/clairoAudio.mp4" preload="auto" loop></audio>
-
-    <hr class="divider"/>
   </div>
-  
- <script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
