@@ -25,7 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   background: #f5f5f5;
-  z-index: 1000;
+  z-index: 000;
 }
 
 #landing h1 {
